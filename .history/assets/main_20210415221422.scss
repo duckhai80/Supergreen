@@ -1,0 +1,254 @@
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+// sticky footer
+.content {
+  min-height: calc(100vh - 50px);
+}
+
+footer {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 5px 60px;
+  background: #082c40;
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding-right: 40px;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 400px 1fr;
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+  margin: 100px auto;
+  width: 1000px;
+  line-height: 2;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+  margin: 30px 0 60px;
+  width: 100%;
+}
+
+button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  border-radius: 5px;
+  border: none;
+  background: #098191;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background ease 0.25s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover {
+  background: #63b6b8;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.ghost {
+  padding: 0.5rem 1rem;
+  border: 1px solid #555;
+  background: white;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.ghost:hover {
+  background: #eee;
+}
+
+.primary {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+// form elements
+
+input[type="number"] {
+  margin-right: 10px;
+  width: 50px;
+}
+
+.quantity {
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+fieldset {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+}
+
+.label {
+  margin: 15px 0;
+  line-height: 1.6;
+
+  span {
+    padding: 8px 12px;
+    border-radius: 1000px;
+    background: #d50813;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+select {
+  padding: 3px;
+}
+
+footer {
+  padding: 10px 30px;
+  width: 100%;
+  background: black;
+  text-align: center;
+  color: white;
+
+  a,
+  a:visited,
+  a:active {
+    font-weight: bold;
+    color: #c4c3ec;
+  }
+}
+
+table {
+  margin: 40px 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-collapse: collapse;
+}
+
+table caption {
+  margin: 0.5em 0 0.75em;
+  font-size: 1.5em;
+}
+
+table tr {
+  padding: 0.35em;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85em;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    border: none;
+    overflow: hidden;
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 0.625em;
+    border-bottom: 3px solid #ddd;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    float: left;
+    content: attr(data-label);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+// comma separated lists
+
+.comma:not(:first-child) {
+  margin-left: -0.15rem;
+}
+
+.comma:empty {
+  display: none;
+}
+
+.comma:not(:first-child):before {
+  content: ", ";
+  margin: 0.15rem;
+}
